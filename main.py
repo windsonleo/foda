@@ -16,7 +16,7 @@ headers = CaseInsensitiveDict()
 headers["Authorization"] = "Basic ZXVtZXNtbzoxMTExMTExMTExMQ=="
 headers["Content-Type"] = "application/x-www-form-urlencoded"
 
-data = "uname=windson&psw=123456"
+data = "inputUsuario=windson&inputPassword=123456"
 
 nome_do_usuario = ''
 
@@ -42,12 +42,12 @@ def autenticacao():
     #   dados = resp.content
 
     if request.method == 'POST':
-        name = request.form['uname']
-        password = request.form['psw']
+        name = request.form['inputUsuario']
+        password = request.form['inputPassword']
         print(name, password)
 
-    resp = make_response(principal(name))
-    resp.set_cookie('userId', name)
+        resp = make_response(principal(name))
+        resp.set_cookie('userId', name)
 
     #  dado = name
 
@@ -78,7 +78,7 @@ import numpy as np
 @app.route("/carregarExcel", methods=['POST'])
 def carregar_excel():
     if request.method == 'POST':
-        f = request.files['filename']
+        f = request.files['filexlsx']
         f.save(secure_filename(f.filename))
         print(f)
         print(f.filename)
