@@ -138,6 +138,7 @@ def tabelacarregada(file):
 
     print(cabecalhos.size)
 
+
     #print(html)
 
    # valores.item()
