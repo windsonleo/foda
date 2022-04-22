@@ -1,0 +1,39 @@
+<!Doctype html>
+
+<html lang="pt-br" xmlns="http://www.w3.org/1999/html">
+
+<head>
+<meta charset="UTF-8">
+<title> Principal</title>
+    <link rel="stylesheet" href="{{ url_for('static',filename='css/principal.css') }}" media="screen">
+
+
+
+</head>
+
+<body>
+
+<div class="navbar">
+  <a href="#home">Usuarios</a>
+  <a href="#news">Configuracao</a>
+
+</div>
+
+<p> Bem-Vindo , <label> {{user}} </label> </p>
+
+    <form action="/carregarExcel" enctype = "multipart/form-data" method = "post">
+    <label for="filename">Selecione o Arquivo:</label> <br>
+    <input type="file" id="filename" name="filename">    <br>
+    <input type="submit">
+    </form>
+
+
+   <div> {{ tabela }}   </div>
+
+
+</body>
+
+
+
+
+</html>

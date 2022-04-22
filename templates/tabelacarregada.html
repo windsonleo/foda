@@ -1,0 +1,64 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <title>Excel Carregado</title>
+        <link rel="stylesheet" href="{{ url_for('static',filename='css/tabelacarregada.css') }}" media="screen">
+
+
+
+</head>
+<body>
+
+<div class="navbar">
+  <a href="#home">Usuarios</a>
+  <a href="#news">Configuracao</a>
+
+</div>
+
+<p> Bem-Vindo , <label> {{user}} </label> </p>
+
+    <form action="/carregarExcel" enctype = "multipart/form-data" method = "post">
+    <label for="filename">Selecione o Arquivo:</label> <br>
+    <input type="file" id="filename" name="filename">    <br>
+    <input type="submit">
+    </form>
+
+<table class="table table-dark table-striped">
+    <thead>
+  <tr>
+    {% for i  in headers %}
+
+        <th>{{i}}</th>
+
+
+     {% endfor %}
+
+     </tr>
+    </thead>
+    <tbody>
+
+    {% for m in tabela %}
+     <tr>
+
+      {% for j in m %}
+
+
+        <td>{{ j }}</td>
+
+
+      {% endfor %}
+
+     </tr>
+
+     {% endfor %}
+
+
+
+    </tbody>
+  </table>
+
+
+
+</body>
+</html>

@@ -1,0 +1,45 @@
+<!Doctype html>
+
+<html lang="pt-br">
+
+<head>
+<meta charset="UTF-8">
+<title> Autenticação</title>
+    <link rel="stylesheet" href="{{ url_for('static',filename='css/autenticacao.css') }}" media="screen">
+
+
+
+</head>
+
+<body>
+
+<form action="/autenticacao" method="post">
+  <div class="imgcontainer">
+    <img src="{{ url_for('static',filename='images/avatar_login.png') }}" alt="Avatar" class="avatar">
+  </div>
+
+  <div class="container">
+    <label for="uname"><b>Usuario</b></label>
+    <input type="text" placeholder="Entre com o Nome de Usuario" name="uname" required>
+
+    <label for="psw"><b>Senha</b></label>
+    <input type="password" placeholder="Entre com a Senha" name="psw" required>
+
+    <button type="submit">Entrar</button>
+    <label>
+      <input type="checkbox" checked="checked" name="remember"> Lembrar me
+    </label>
+  </div>
+
+  <div class="container" style="background-color:#f1f1f1">
+    <button type="button" class="cancelbtn">Cancelar</button>
+    <span class="psw">Esqueci a  <a href="#">Senha?</a></span>
+  </div>
+</form>
+
+</body>
+
+
+
+
+</html>
